@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.css">
+    <title>Document</title>
+    <style>
+        .login-register {
+            background-color: skyblue;
+        }
+
+        .login-register ul li {
+            list-style: none;
+
+        }
+
+        .text {
+            color: #ff7220;
+        }
+
+        .container-fluid {
+            background: linear-gradient(rgba(245, 208, 64, 0.5), rgba(230, 109, 109, 0.9) );
+        }
+
+        .M-logo img {
+            width: 50px;
+        }
+
+        .button {
+            width: 50%;
+            padding: 1rem 1rem;
+            font-weight: 700;
+        }
+
+        .input-box{
+            position: relative;
+            border: none;
+            color: grey;
+            outline: none;
+            width: 100%;
+            /* border: none; */
+        }
+
+
+        .input-box a {
+            color: #ff7200;
+            text-decoration: none;
+        }
+
+        .checkout-page-style input {
+            background: #F5F5F5;
+            border-radius: 5px;
+            border: 0 none;
+            height: 60px;
+            padding: 0 20px 0px 40px;
+            font-weight: 500;
+            color: var(--color-body);
+            border: 1px solid transparent;
+            position: relative;
+        }
+
+        input,
+        select,
+        textarea {
+
+            transition: 0.3s;
+
+        }
+
+        .input-box .show-icon {
+            position: absolute;
+            top: 14px;
+            left: 11px;
+            z-index: 9;
+            font-size: 20px;
+        }
+
+        .Chnages {
+            margin-bottom: 30px !important;
+        }
+
+        .login-register-page-wrapper .login-form-box {
+            border: 1px solid #eeeeee;
+            padding: 40px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        button {
+            width: 80%;
+            background: blue;
+            border: none;
+            padding: 1rem;
+            font-size: 1.5rem;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 10px;
+        }
+
+        input[type="text"] {
+            padding: 1rem 2.4rem;
+            width: 80%;
+            border: none;
+            color: grey;
+            font-weight: 500;
+            background: #dddada;
+            outline: none;
+        }
+
+        input[type="email"] {
+            padding: 1rem 2.4rem;
+            width: 80%;
+            border: none;
+            color: grey;
+            font-weight: 500;
+            background: #dddada;
+            outline: none;
+        }
+
+        input[type="password"] {
+            padding: 1rem 2.4rem;
+            width: 80%;
+            border: none;
+            color: grey;
+            background: #dddada;
+            font-weight: 500;
+            outline: none;
+        }
+
+        .sending-main {
+            width: 100%;
+            display: flex;
+        }
+
+        @media screen and (max-width: 768px) {
+            .sending-main {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+
+        .input-box.otp-line {
+            width: 50%;
+            display: inline-block;
+        }
+
+
+        .input-boxx{
+            position: relative;
+            border: none;
+            color: grey;
+            outline: none;
+            width: 80%;
+            border: none;
+            background: #dddada;
+            padding: 0.5rem;
+            font-weight: 600;
+        }
+
+        #selectnew {
+            position: absolute;
+            border: none;
+            top: 20px;
+            left: 0.2rem;
+            background: #dddada;
+        }
+
+        #phone {
+            position: unset;
+            padding: 1.1rem 2.3rem;
+            background: #dddada;
+            border: none;
+            width: 80%;
+        }
+
+
+        .card-body.change {
+            padding: 0;
+            width: 20%;
+            display: inline-block;
+            margin-bottom: 0px;
+        }
+
+
+        @media screen and (max-width: 768px) {
+            .card-body.change {
+                padding: 0;
+                width: 100%;
+                display: inline-block;
+                margin-bottom: 0px;
+            }
+
+            .input-box.otp-line {
+                width: 100%;
+                display: inline-block;
+            }
+        }
+
+        .card-title.text-center {
+            font-size: 17px;
+            font-weight: 500;
+            line-height: 20px;
+            margin-top: -12px;
+        }
+
+
+        .card-text .otp-field {
+            display: inline-block !important;
+            width: 45px;
+            height: 45px;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            border: none;
+            border-bottom: 2px solid #231F40;
+            outline: none;
+            margin: 2px 4px 2px 4px;
+            padding: 0 !important;
+        }
+
+        .checkout-page-style input {
+            background: #F5F5F5;
+            border-radius: 5px;
+            border: 0 none;
+            height: 60px;
+            padding: 0 20px 0px 40px;
+            font-weight: 500;
+            color: var(--color-body);
+            border: 1px solid transparent;
+            position: relative;
+        }
+
+        input[type="newsearch"] {
+            width: 50px;
+            border: none;
+            font-weight: 500;
+            outline: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            input[type="text"] {
+                padding: 1rem 2.4rem;
+                width: 100%;
+                border: none;
+                color: grey;
+                font-weight: 500;
+                background: #dddada;
+                outline: none;
+            }
+
+            input[type="password"] {
+                padding: 1rem 2.4rem;
+                width: 100%;
+                border: none;
+                color: grey;
+                background: #dddada;
+                font-weight: 500;
+                outline: none;
+            }
+
+            #phone {
+                position: unset;
+                padding: 1.1rem 2.3rem;
+                background: #dddada;
+                border: none;
+                width: 100%;
+            }
+
+            input[type="email"] {
+                padding: 1rem 2.4rem;
+                width: 100%;
+                border: none;
+                color: grey;
+                font-weight: 500;
+                background: #dddada;
+                outline: none;
+            }
+
+            button {
+                width: 100%;
+                background: blue;
+                border: none;
+                padding: 1rem;
+                font-size: 1.5rem;
+                color: #fff;
+                font-weight: 600;
+                border-radius: 10px;
+            }
+        }
+
+        #codeBox1 {
+            outline: none;
+            text-align: center;
+            border-top: 0px solid #fff;
+            border-left: 0px;
+            border-right: 0px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-bottom: 1px solid #000;
+            width: 50px;
+        }
+
+        #codeBox2 {
+            outline: none;
+            text-align: center;
+            border-top: 0px solid #fff;
+            border-left: 0px;
+            border-right: 0px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-bottom: 1px solid #000;
+            width: 50px;
+        }
+
+        #codeBox3 {
+            outline: none;
+            text-align: center;
+            border-top: 0px solid #fff;
+            border-left: 0px;
+            border-right: 0px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-bottom: 1px solid #000;
+            width: 50px;
+        }
+
+        #codeBox4 {
+            outline: none;
+            text-align: center;
+            border-top: 0px solid #fff;
+            border-left: 0px;
+            border-right: 0px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-bottom: 1px solid #000;
+            width: 50px;
+        }
+
+        @media screen and (max-width: 768px) {
+            #codeBox1 {
+            outline: none;
+            text-align: center;
+            border-top: 0px solid #fff;
+            border-left: 0px;
+            border-right: 0px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-bottom: 1px solid #000;
+            width: 60px !important;
+        }
+
+        #codeBox2 {
+            outline: none;
+            text-align: center;
+            border-top: 0px solid #fff;
+            border-left: 0px;
+            border-right: 0px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-bottom: 1px solid #000;
+            width: 60px !important;
+        }
+
+        #codeBox3 {
+            outline: none;
+            text-align: center;
+            border-top: 0px solid #fff;
+            border-left: 0px;
+            border-right: 0px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-bottom: 1px solid #000;
+            width: 60px !important;
+        }
+
+        #codeBox4 {
+            outline: none;
+            text-align: center;
+            border-top: 0px solid #fff;
+            border-left: 0px;
+            border-right: 0px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-bottom: 1px solid #000;
+            width: 60px !important;
+        } 
+
+        .input-boxx {
+    position: relative;
+    border: none;
+    color: grey;
+    width: 100%;
+    background-color: #dddada;
+    padding: 0.5rem 1.1rem;  
+}
+        }
+    </style>
+</head>
+
+<body>
+    <header class="container">
+        <div class=" mt-4">
+            <img src="https://www.margdarshakendra.com/img/margdarshakendra.png" width="200px" alt="logo">
+        </div>
+    </header>
+
+    <div class="container-fluid mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 py-5">
+                    <h1>Login / Register </h1>
+                    <p style="color: grey;">Home &#x3c; Login / Register</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="M-logo mt-3">
+                    <h2> <img src="https://www.margdarshakendra.com/img/Mlogo.png" alt="m logo"> Login</h2>
+                </div>
+
+                <form class="login-form">
+                    <input type="hidden">
+                    <div class="input-box Chnages">
+                        <input type="text" placeholder="Email" name="email">
+                        <div class="show-icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <span style="color: red"> </span>
+                    <div class="input-box change Chnages">
+                        <input type="password" placeholder="Passcode" name="passcode">
+                        <div class="show-icon change">
+                            <ion-icon name="key-outline"></ion-icon>
+                        </div>
+                    </div>
+                    <span style="color: red"> </span>
+                    <div class="comment-form-consent input-box Chnages">
+                        <input id="checkbox-1" type="checkbox" checked="">
+                        <label for="checkbox-1" class="checkbox-1-label">I agree to the Terms of Use and Privacy
+                            Policy.</label>
+                    </div>
+                    <span style="color: red"> </span>
+                    <button type="button">
+                        <span>Login</span>
+                    </button>
+                    <div class="input-box">
+                        <a href="https://www.margdarshakendra.com/forgot-password" class="lost-password">Forget
+                            Password?</a>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-sm-6 ">
+                <div class="M-logo mt-3">
+                    <h2> <img src="https://www.margdarshakendra.com/img/Mlogo.png" alt="m logo"> Register
+                    </h2>
+
+                    <form class="login-form registerform" >
+                        <input type="hidden">
+                        <div class="sending-main">
+                            <div class="input-box Chnages otp-line">
+                                <select name="" id="selectnew">
+                                    <option value="">1</option>
+                                    <option value="">1</option>
+                                    <option value="">1</option>
+                                    <option value="">1</option>
+                                    <option value="">1</option>
+                                    <option value="">1</option>
+
+                                </select>
+                                <input id="phone" type="number" name="user_mobile"  onblur="handleotp()" placeholder="8124137625">
+                                <input class="contry_code" type="hidden" name="country_code" id="country_code">
+
+
+                            </div>
+                            <div class="card-body change">
+                                <h6 class="card-title " style="margin-left: 2rem;">Verify SMS Code</h6>
+                                <div class="card-text mt-1">
+                                    <div class="otp-form  col-md-7 col-sm-7  w-100">
+                                        <input type="number" id="codeBox1" maxlength="1"
+                                            onkeyup="onKeyUpEvent(1, event)" onfocus="onFocusEvent(1)">
+                                        <input type="number" id="codeBox2" maxlength="1"
+                                            onkeyup="onKeyUpEvent(2, event)" onfocus="onFocusEvent(2)"
+                                            style="outline: none; text-align: center; border-top: 0px solid #fff; border-left: 0px; border-right: 0px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;  border-bottom: 1px solid #000; width:  50px;">
+                                        <input type="number" id="codeBox3" maxlength="1"
+                                            onkeyup="onKeyUpEvent(3, event)" onfocus="onFocusEvent(3)"
+                                            style="outline: none; text-align: center; border-top: 0px solid #fff; border-left: 0px; border-right: 0px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;  border-bottom: 1px solid #000; width:  50px;">
+                                        <input type="number" id="codeBox4" maxlength="1"
+                                            onkeyup="onKeyUpEvent(4, event)" onfocus="onFocusEvent(4)"
+                                            style="outline: none; text-align: center; border-top: 0px solid #fff; border-left: 0px; border-right: 0px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;  border-bottom: 1px solid #000; width:  50px;">
+                                        <input class="otp-value" type="hidden" name="otp_hidden_val"
+                                            id="otp_hidden_val">
+                                        <span style="color: green"> </span>
+                                        <span style="color: green"> </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <span style="color: red"> </span>
+                        <div class="input-box Chnages mt-2">
+                            <input type="email" placeholder="Email" name="user_email" />
+                            <div class="show-icon z-0" style="z-index: 0;">
+                                <ion-icon name="mail-outline"></ion-icon>
+                            </div>
+                            <span style="color: red" class="user_email_error"> </span>
+                        </div>
+
+                        <div class="input-box Chnages">
+                            <input type="text" placeholder="Full Name" name="user_name" />
+                            <div class="show-icon" style="z-index: 0;">
+                                <ion-icon name="person-outline"></ion-icon>
+                            </div>
+                            <span style="color: red" class="user_name_error"> </span>
+                        </div>
+
+
+                        <div class="input-boxx Chnages buttom" style="border: none; box-shadow: 0 0 0 0 gray;">
+                            <select class=" input-boxx mb--0" name="user_type">
+                                <option class="input-boxx Chnages" value="first" disabled>User Type </option>
+                                <option class="input-boxx Chnages" value="S">Student/Jobseeker</option>
+                                <option class="input-boxx Chnages" value="A">Counsellor/Trainer</option>
+
+                            </select>
+                            <span style="color: red"> </span>
+                        </div>
+
+                        <div class="input-box">
+                            <input id="checkbox-2" name="user_isagree" type="checkbox" checked />
+                            <label for="checkbox-2" id="checkbox-2-label">I agree to the Terms of Use and Privacy
+                                Policy.</label>
+                        </div>
+                        <span style="color: red" class="checkboxError"> </span>
+
+                        <br>
+                        <button type="button" class="mb-5">
+                            <span>Register</span>
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+
+    <script>
+         
+        function getCodeBoxElement(index) {
+            return document.getElementById('codeBox' + index);
+        }
+        function onKeyUpEvent(index, event) {
+            const eventCode = event.which || event.keyCode;
+            if (getCodeBoxElement(index).value.length === 1) {
+                if (index !== 4) {
+                    getCodeBoxElement(index + 1).focus();
+                } else {
+                    getCodeBoxElement(index).blur();
+                    // Submit code
+                    console.log('submit code ');
+                }
+            }
+            if (eventCode === 8 && index !== 1) {
+                getCodeBoxElement(index - 1).focus();
+            }
+        }
+        function onFocusEvent(index) {
+            for (item = 1; item < index; item++) {
+                const currentElement = getCodeBoxElement(item);
+                if (!currentElement.value) {
+                    currentElement.focus();
+                    break;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
